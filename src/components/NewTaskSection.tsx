@@ -1,12 +1,12 @@
-import { Box, Flex, Text, Button } from "native-base";
 import React from "react";
+import { Flex } from "native-base";
 
 import NewTaskButton from "../components/UI/NewTaskButton";
 import NewListButton from "../components/UI/NewListButton";
 
 interface Props {}
 
-const NewTaskSection: React.FC<Props> = (props) => {
+const NewTaskSection: React.FC<Props> = (props: Props) => {
   function addTaskHandler(): void {
     console.log("new task");
   }
@@ -16,12 +16,7 @@ const NewTaskSection: React.FC<Props> = (props) => {
   }
 
   return (
-    <Flex
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      px={3}
-    >
+    <Flex direction="row" justify="space-between" align="center" px={3}>
       <NewTaskButton onPress={addTaskHandler} />
       <NewListButton onPress={AddListHandler} />
     </Flex>
