@@ -3,7 +3,8 @@ import { Flex } from "native-base";
 
 import Dashboard from "../components/Dashboard";
 import AllTasksSection from "../components/AllTasksSection";
-import NewTaskSection from "../components/NewTaskSection";
+import ControlsSection from "../components/ControlsSection";
+import AddListModal from "../components/Modals/AddListModal";
 
 interface Props {}
 
@@ -12,7 +13,8 @@ const MainScreen: React.FC<Props> = (props: Props) => {
     <Flex flex={1} bg="coolGray.800" px={3} safeArea _android={{ py: "5" }}>
       <Dashboard />
       <AllTasksSection />
-      <NewTaskSection />
+      <ControlsSection />
+      <AddListModal />
     </Flex>
   );
 };

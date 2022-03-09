@@ -25,7 +25,16 @@ export const initialState: MainState = {
 export const mainSlice = createSlice({
   name: "main",
   initialState,
-  reducers: {},
+  reducers: {
+    addlist: (state, action: PayloadAction<string>) => {
+      const newListObj = {
+        name: action.payload,
+        completed: [],
+        uncompleted: [],
+      };
+      state.lists.push(newListObj);
+    },
+  },
 });
 
 export const {} = mainSlice.actions;

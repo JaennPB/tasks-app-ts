@@ -4,15 +4,20 @@ import { Flex } from "native-base";
 import NewTaskButton from "../components/UI/NewTaskButton";
 import NewListButton from "../components/UI/NewListButton";
 
+import { useAppDispatch } from "../app/hooks";
+import { openOrCloseAddListModal } from "../app/slices/uiSlice";
+
 interface Props {}
 
 const NewTaskSection: React.FC<Props> = (props: Props) => {
+  const dispatch = useAppDispatch();
+
   function addTaskHandler(): void {
     console.log("new task");
   }
 
   function AddListHandler(): void {
-    console.log("new list");
+    dispatch(openOrCloseAddListModal(true));
   }
 
   return (
