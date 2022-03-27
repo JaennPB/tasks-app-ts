@@ -2,16 +2,16 @@ import React from "react";
 import { Button, Flex, Modal, Text, Input, TextArea } from "native-base";
 
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { openOrCloseAddListModal } from "../../app/slices/uiSlice";
+import { openOrCloseAddTaskModal } from "../../app/slices/uiSlice";
 
 interface Props {}
 
 const AddListModal: React.FC<Props> = (props: Props) => {
-  const modalIsOpen = useAppSelector((state) => state.UI.addListModalIsVisible);
+  const modalIsOpen = useAppSelector((state) => state.UI.addTaskModalIsVisible);
   const dispatch = useAppDispatch();
 
   function closeModalHandler(): void {
-    dispatch(openOrCloseAddListModal(false));
+    dispatch(openOrCloseAddTaskModal(false));
   }
 
   return (
@@ -23,7 +23,7 @@ const AddListModal: React.FC<Props> = (props: Props) => {
               Save
             </Button>
             <Text color="lightText" fontSize="lg">
-              New List
+              New Task
             </Text>
             <Button onPress={closeModalHandler} variant="ghost" size="lg">
               Cancel
@@ -32,7 +32,15 @@ const AddListModal: React.FC<Props> = (props: Props) => {
         </Modal.Header>
         <Modal.Body>
           <Input
-            placeholder="Title"
+            placeholder="New task"
+            fontSize="lg"
+            mb={5}
+            color="lightText"
+            bg="coolGray.700"
+            borderWidth={0}
+          />
+          <TextArea
+            placeholder="Details"
             fontSize="lg"
             mb={5}
             color="lightText"

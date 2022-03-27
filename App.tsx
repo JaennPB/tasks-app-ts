@@ -1,4 +1,4 @@
-import { NativeBaseProvider, Box, StatusBar } from "native-base";
+import { NativeBaseProvider, StatusBar } from "native-base";
 import { Provider } from "react-redux";
 
 import MainScreen from "./src/screens/MainScreen";

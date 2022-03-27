@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface UIState {
-  addlistModalIsVisible: true | false;
+  addListModalIsVisible: true | false;
+  addTaskModalIsVisible: true | false;
 }
 
 export const initialState: UIState = {
-  addlistModalIsVisible: false,
+  addListModalIsVisible: false,
+  addTaskModalIsVisible: false,
 };
 
 export const UISlice = createSlice({
@@ -13,10 +15,14 @@ export const UISlice = createSlice({
   initialState,
   reducers: {
     openOrCloseAddListModal: (state, action: PayloadAction<boolean>) => {
-      state.addlistModalIsVisible = action.payload;
+      state.addListModalIsVisible = action.payload;
+    },
+    openOrCloseAddTaskModal: (state, action: PayloadAction<boolean>) => {
+      state.addTaskModalIsVisible = action.payload;
     },
   },
 });
 
-export const { openOrCloseAddListModal } = UISlice.actions;
+export const { openOrCloseAddListModal, openOrCloseAddTaskModal } =
+  UISlice.actions;
 export default UISlice.reducer;

@@ -5,7 +5,10 @@ import NewTaskButton from "../components/UI/NewTaskButton";
 import NewListButton from "../components/UI/NewListButton";
 
 import { useAppDispatch } from "../app/hooks";
-import { openOrCloseAddListModal } from "../app/slices/uiSlice";
+import {
+  openOrCloseAddListModal,
+  openOrCloseAddTaskModal,
+} from "../app/slices/uiSlice";
 
 interface Props {}
 
@@ -13,7 +16,7 @@ const NewTaskSection: React.FC<Props> = (props: Props) => {
   const dispatch = useAppDispatch();
 
   function addTaskHandler(): void {
-    console.log("new task");
+    dispatch(openOrCloseAddTaskModal(true));
   }
 
   function AddListHandler(): void {
